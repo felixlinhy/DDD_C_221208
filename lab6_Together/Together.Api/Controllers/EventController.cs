@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api")]
 public class EventController:ControllerBase
 {
-    [Route("add-event)")]
+    [Route("add-event")]
     public IActionResult AddEvent()
     {
         return Ok();

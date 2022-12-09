@@ -1,0 +1,4 @@
+### Query Event GET
+GET https://localhost:7091/api/query-event
+### Add Event GET
+GET https://localhost:7091/api/add-event
