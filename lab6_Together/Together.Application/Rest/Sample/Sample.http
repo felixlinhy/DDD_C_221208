@@ -1,2 +1,2 @@
 
-GET https://localhost:7091/WeatherForecast
+GET https://localhost:7091/api/
