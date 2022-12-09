@@ -30,12 +30,16 @@ public class EventController:ControllerBase
     public IActionResult QueryEvent(QueryEventRequest request)
     {
         var result = eventService.query(request.lat,request.lng,request.length);
-        QueryEventResponse res = new QueryEventResponse(
-            "name","coord","tpe",0.5f,0.5f,300
-        );
-        QueryEventResponse[] events=new QueryEventResponse[] {res,res,res};
-
-        return Ok(events);
+        List<QueryEventResponse> events=new List<QueryEventResponse>();
+        foreach (var r in result)
+        {
+            QueryEventResponse res = new QueryEventResponse(
+                r.name,r.coordinator,r.place,r.lat,r.lng,r.fee
+            );
+            events.Add(res);
+        }
+        
+        return Ok(events.ToArray());
     }
 
 }
